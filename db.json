@@ -1,0 +1,161 @@
+{
+    "cours": [
+        { "dateCours": "2024-01-15", "idClasse": "genie logiciel l1", "idSemestre": "en cours", "idProfesseur":"wane" },
+        { "dateCours": "2024-01-20", "idClasse": "genie logiciel l2", "idSemestre": "terminé", "idProfesseur": "fall" },
+        { "dateCours": "2024-02-10", "idClasse": "design numerique l1", "idSemestre": "planifié", "idProfesseur": "sylla" },
+        { "dateCours": "2024-02-15", "idClasse":"developpement w/m l1", "idSemestre": "en cours", "idProfesseur": "drame" },
+        { "dateCours": "2024-03-01", "idClasse": "genie logiciel m2", "idSemestre": "planifié", "idProfesseur": "diouf"}
+      ],
+      "seances": [
+        { "date": "2024-01-01", "heureDebut": "08:00", "heureFin": "10:00", "idCours": 1 },
+        { "id": 2, "date": "2024-01-15", "heureDebut": "10:00", "heureFin": "12:00", "idCours": 2 },
+        { "id": 3, "date": "2024-02-01", "heureDebut": "14:00", "heureFin": "16:00", "idCours": 3 },
+        { "id": 4, "date": "2024-02-15", "heureDebut": "16:00", "heureFin": "18:00", "idCours": 4 },
+        { "id": 5, "date": "2024-03-01", "heureDebut": "18:00", "heureFin": "20:00", "idCours": 5 }
+      ],
+      "absences": [
+        {"dateAbs": "2024-01-01", "idEtudiant":"Aminata Fall", "idSeance": "Introduction aux Bases de Données"},
+        {"dateAbs": "2024-01-15", "idEtudiant":"Aliou Niass", "idSeance": "Modélisation Conceptuelle"},
+        {"dateAbs": "2024-02-01", "idEtudiant":"Ibrahima Diop", "idSeance": "Langage SQL et Requêtes"},
+        {"dateAbs": "2024-02-15", "idEtudiant": "Omar Mbaye", "idSeance": "Optimisation des Performances" },
+        {"dateAbs": "2024-03-01", "idEtudiant":"Fatou Ndiaye", "idSeance":"Travaux Pratiques sur les Requêtes SQL" }
+      ],
+      "niveaux": [
+        { "id": 1, "nom": "licence 1" },
+        { "id": 2, "nom": "licence 2" },
+        { "id": 3, "nom": "licence 3" },
+        { "id": 4, "nom": "master 1" },
+        { "id": 5, "nom": "master 2" }
+      ],
+      "semestres": [
+        { "nom": "semestre 1", "etat": "en cours" },
+        {  "nom": "semestre 2", "etat": "terminé" },
+        {  "nom": "semestre 3", "etat": "planifié" },
+        {  "nom": "semestre 4", "etat": "en cours" }
+      ],
+      "classes": [
+        { "id": 1, "nom": "genie logiciel l1", "idNiveau": 1 },
+        { "id": 2, "nom": "genie logiciel l2", "idNiveau": 2 },
+        { "id": 3, "nom": "design numerique l1", "idNiveau": 3 },
+        { "id": 4, "nom": "developpement w/m l1", "idNiveau": 4 },
+        { "id": 5, "nom": "genie logiciel m2", "idNiveau": 5 }
+      ],
+      "etudiants": [
+        {
+          "id": 1,
+          "matricule": "etu001",
+          "nomComplet": "Aminata Fall",
+          "adresse": "dakar",
+          "login": "afall",
+          "mdp": "mdp123",
+          "idClasse": 1
+        },
+        {
+          "id": 2,
+          "matricule": "etu002",
+          "nomComplet": "Aliou Niass",
+          "adresse": "thiès",
+          "login": "aniass",
+          "mdp": "mdp123",
+          "idClasse": 2
+        },
+        {
+          "id": 3,
+          "matricule": "etu003",
+          "nomComplet": "Ibrahima Diop",
+          "adresse": "kaolack",
+          "login": "idiop",
+          "mdp": "mdp123",
+          "idClasse": 3
+        },
+        {
+          "id": 4,
+          "matricule": "etu004",
+          "nomComplet": "Omar Mbaye",
+          "adresse": "kolda",
+          "login": "ombaye",
+          "mdp": "mdp123",
+          "idClasse": 4
+        },
+        {
+          "id": 5,
+          "matricule": "etu005",
+          "nomComplet": "Fatou Ndiaye",
+          "adresse": "matam",
+          "login": "fndiaye",
+          "mdp": "mdp123",
+          "idClasse": 5
+        }
+      ],
+      "professeurs": [
+        {
+          "id": 1,
+          "nom": "wane",
+          "prenom": "birane baila",
+          "grade": "maître de l'elementaire",
+          "specialite": "informatique"
+        },
+        {
+          "id": 2,
+          "nom": "fall",
+          "prenom": "amina",
+          "grade": "docteur",
+          "specialite": "pharmacienne"
+        },
+        {
+          "id": 3,
+          "nom": "sylla",
+          "prenom": "moussa",
+          "grade": "professeur ",
+          "specialite": "français"
+        },
+        {
+          "id": 4,
+          "nom": "drame",
+          "prenom": "assane",
+          "grade": "docteur",
+          "specialite": "chimie"
+        },
+        {
+            "id": 4,
+            "nom": "diouf",
+            "prenom": "amath",
+            "grade": "docteur",
+            "specialite": "chimie"
+          }
+      ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
