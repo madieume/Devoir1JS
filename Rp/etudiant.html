@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Années</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
+        type="button"
+        class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd"
+                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+            </path>
+        </svg>
+    </button>
+
+    <aside id="logo-sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        aria-label="Sidebar">
+        <div class="w-64 bg-blue-900 text-white h-screen flex flex-col justify-between" id="sidebar">
+            <div class="p-4">
+                <div class="flex items-center justify-between mt-4 mb-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="/Images/logo.png" alt="Logo" class="w-10 h-10">
+                        <h2 class="text-lg font-semibold  side">Ecole 221</h2>
+                    </div>
+                    <button class="bg-blue-700 px-2 py-1 rounded mb-3 " id="toggle-sidebar">x</button>
+                </div>
+                <div>
+                    <a href="annee.html"
+                        class="block py-2 px-4 mb-4 rounded border border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <div class="side">Liste des années</div>
+                    </a>
+                   
+                    <a href="module.html"
+                    class="block py-2 px-4 rounded border border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
+                    <i class="fas fa-book mr-2"></i>
+                        <div class="side">Liste des modules</div>
+                    </a>
+
+                    <a href="classe.html"
+                        class="block py-2 px-4 rounded border border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
+                        <i class="fas fa-chalkboard-teacher mr-2"></i>
+                        <div class="side">Liste des classes</div>
+                    </a>
+
+                    <a href="ouvreClasse.html"
+                        class="block py-2 px-4 rounded border border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
+                        <i class="fas fa-door-open mr-2"></i>
+                        <div class="side">Ouverture des classes</div>
+                    </a>
+
+                    <a href="etudiant.html"
+                    class="block py-2 px-4 rounded bg-white flex items-center text-black hover:bg-gray-100 transition duration-300 mt-3">
+                    <i class="fas fa-user-graduate mr-2"></i>
+                    <div class="side">Liste des étudiants</div>
+                </a>
+                
+
+                    <a href="professeur.html"
+                        class="block py-2 px-4 rounded border border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
+                        <i class="fas fa-chalkboard mr-2"></i>
+                        <div class="side">Liste des professeurs</div>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </aside>
+
+    <nav class="bg-blue-900 p-4 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <img src="/Images/logo.png" alt="Logo" class="h-8">
+            <!-- <span class="text-white text-xl font-semibold">Ecole 221</span> -->
+        </div>
+        <div class="relative">
+            <button id="user-menu-button" class="flex items-center text-white" onclick="toggleProfileMenu()">
+                <img src="/Images/image1.png" alt="User Profile" class="w-8 h-8 rounded-full mr-2">
+                <span id="user-name">Aminata Fall</span>
+            </button>
+            <div id="profile-menu"
+                class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
+                <div class="px-4 py-3 text-gray-800">
+                    <div class="font-semibold" id="user-name-display">Aminata Fall</div>
+                    <div class="text-sm text-gray-600" id="user-matricule">Matricule: etu001</div>
+                    <div class="text-sm text-gray-600" id="user-address">Adresse: Dakar</div>
+                    <div class="text-sm text-gray-600" id="user-login">Login: afall</div>
+                </div>
+                <div>
+                    <button onclick="logout()"
+                        class="w-full text-left px-4 py-2 text-white text-center hover:bg-red-500 bg-red-700 focus:outline-none">
+                        Déconnexion
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="p-4 sm:ml-64">
+        <!-- <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700"> -->
+        <h1 class="text-blue-400">Etudiant / Liste des etudiant</h1>
+        <h1 class="text-xl font-bold mb-6">Liste des etudiants des étudiants de l'année en cours</h1>
+        <div class="flex items-center justify-between mb-4">
+            <!-- Champ de filtre et bouton OK -->
+            <div class="flex items-center space-x-2">
+              <h1 class="font-semibold">Rechercher et filtrer </h1>
+           </div>
+           <!-- Bouton Ajouter une année -->
+           <button id="add-year-button" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">
+               Ajouter un étudiant
+           </button>
+       </div>
+ 
+  <div class="flex flex-col items-start space-y-2">
+    <label for="search" class="font-medium text-gray-700">Rechercher un étudiant :</label>
+    <div class="flex items-center space-x-2 w-full">
+      <input type="text" id="search" placeholder="Entrer le Nom"
+          class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+      <button id="search-btn"
+          class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          OK
+      </button>
+    </div>
+  </div>
+  <div class="flex items-start space-x-6">
+    <!-- Filtre par classe -->
+    <div class="flex flex-col items-start space-y-2">
+      <label for="filter-class" class="font-medium text-gray-700">Filtrer par classe :</label>
+      <div class="flex items-center space-x-2">
+        <select id="filter-class"
+            class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+          <option value="" disabled selected>Choisissez une classe</option>
+          <option value="licence1">Licence 1</option>
+          <option value="licence2">Licence 2</option>
+          <option value="licence3">Licence 3</option>
+        </select>
+        <button id="filter-class-btn"
+            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            OK
+        </button>
+      </div>
+    </div>
+  
+    <!-- Filtre par filière -->
+    <div class="flex flex-col items-start space-y-2">
+      <label for="filter-field" class="font-medium text-gray-700">Filtrer par filière :</label>
+      <div class="flex items-center space-x-2">
+        <select id="filter-field"
+            class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+          <option value="" disabled selected>Choisissez une filière</option>
+          <option value="Developpement">Developpement Web et Mobile</option>
+          <option value="genie_logiciel">Genie Logiciel</option>
+          <option value="design_numerique">Design Numerique</option>
+        </select>
+        <button id="filter-field-btn"
+            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            OK
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-12">
+            <table class="min-w-full table-auto border-collapse">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-200 dark:text-gray-400 border-b">
+                  <tr>
+                    <th class="py-3 px-6 text-left border-r">Nom</th>
+                    <th class="py-3 px-6 text-left border-r">Prenom</th>
+                    <th class="py-3 px-6 text-left border-r">Classe</th>
+                    <th class="py-3 px-6 text-left border-r">Filière</th>
+                    <th class="py-3 px-6 text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body" class="text-gray-600 text-sm font-light">
+                  <!-- Les lignes des années seront insérées ici -->
+                </tbody>
+            </table>
+
+        </div>
+
+
+        <script src="/Js/etudiant.js"></script>
+
+
+
+
+    </body>
+    
+    </html>

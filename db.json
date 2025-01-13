@@ -7,11 +7,11 @@
         { "dateCours": "2024-03-01", "idClasse": "genie logiciel m2", "idSemestre": "planifié", "idProfesseur": "diouf"}
       ],
       "seances": [
-        { "date": "2024-01-01", "heureDebut": "08:00", "heureFin": "10:00", "idCours": 1 },
-        { "id": 2, "date": "2024-01-15", "heureDebut": "10:00", "heureFin": "12:00", "idCours": 2 },
-        { "id": 3, "date": "2024-02-01", "heureDebut": "14:00", "heureFin": "16:00", "idCours": 3 },
-        { "id": 4, "date": "2024-02-15", "heureDebut": "16:00", "heureFin": "18:00", "idCours": 4 },
-        { "id": 5, "date": "2024-03-01", "heureDebut": "18:00", "heureFin": "20:00", "idCours": 5 }
+        {"date": "2024-01-01", "heureDebut": "08:00", "heureFin": "10:00", "idCours": 1 },
+        {"date": "2024-01-15", "heureDebut": "10:00", "heureFin": "12:00", "idCours": 2 },
+        {"date": "2024-02-01", "heureDebut": "14:00", "heureFin": "16:00", "idCours": 3 },
+        {"date": "2024-02-15", "heureDebut": "16:00", "heureFin": "18:00", "idCours": 4 },
+        {"date": "2024-03-01", "heureDebut": "18:00", "heureFin": "20:00", "idCours": 5 }
       ],
       "absences": [
         {"dateAbs": "2024-01-01", "idEtudiant":"Aminata Fall", "idSeance": "Introduction aux Bases de Données"},
@@ -123,7 +123,73 @@
             "grade": "docteur",
             "specialite": "chimie"
           }
+      ],
+      "annees": [
+      {
+        "id": 1,
+        "annee": "2022-2023",
+        "statut": "Ouverte",
+        "details": {
+          "date_debut": "2022-09-01",
+          "date_fin": "2023-07-15",
+          "description": "Année scolaire avec un semestre spécial."
+        }
+      },
+      {
+        "id": 2,
+        "annee": "2023-2024",
+        "statut": "Fermée",
+        "details": {
+          "date_debut": "2023-09-01",
+          "date_fin": "2024-07-15",
+          "description": "Année scolaire normale avec deux semestres."
+        }
+      },
+      {
+        "id": 3,
+        "annee": "2024-2025",
+        "statut": "Prévue",
+        "details": {
+          "date_debut": "2024-09-01",
+          "date_fin": "2025-07-15",
+          "description": "Année scolaire à venir, en phase de préparation."
+        }
+      } ],
+     
+        "modules": [
+          { "id": 1, "libelle": "Algorithme" },
+          { "id": 2, "libelle": "Java" },
+          { "id": 3, "libelle": "Python" },
+          { "id": 4, "libelle": "Php" },
+          { "id": 5, "libelle": "Java Script" }
+        ],
+        "Etudiants": [
+        {
+          "id": 1,
+          "nom": "Fall",
+          "prenom": "Aminata ",
+          "classe": "Licence 1",
+          "filiere": "DEV/W/M"
+         
+        },
+        {
+          "id": 2,
+          "nom": "Niass",
+          "prenom": "Aliou ",
+          "classe": "Licence 2",
+          "filiere": "GL"
+        },
+        {
+          "id": 3,
+         "nom": "Diop",
+          "prenom": "Ibrahima ",
+          "classe": "Licence 3",
+          "filiere": "DN"
+        }
+       
       ]
+      
+      
 
 
 

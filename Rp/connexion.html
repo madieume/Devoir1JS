@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Connexion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-blue-900 p-8 rounded-lg shadow-lg w-full max-w-lg">
+        <div class="flex justify-center mb-6">
+            <img src="/Images/logo.png" alt="Logo" class="w-20 h-20 rounded-full">
+        </div>
+        <h1 class="text-2xl font-bold text-center text-white mb-6">Connexion</h1>
+        <form action="#" method="POST" class="space-y-4">
+            <div>
+                <label for="login" class="block text-sm font-medium text-white">Login</label>
+                <input 
+                    type="text" 
+                    id="login" 
+                    name="login" 
+                    placeholder="Entrez votre login" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-white">Mot de passe</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Entrez votre mot de passe" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+            </div>
+            <button 
+                type="submit" 
+                class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            >
+                Se connecter
+            </button>
+        </form>
+        <p class="text-sm text-white text-center mt-4">
+           oublier le mot de passe ? <a href="#" class="text-white hover:underline">Créer un compte</a>
+        </p>
+    </div>
+    <script src="/js/login.js" ></script>
+
+</body>
+</html>
