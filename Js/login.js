@@ -17,7 +17,7 @@
             }
 
         
-            window.location.href = "sidebar.html"; 
+            window.location.href = "annee.html"; 
         });
     });
 
