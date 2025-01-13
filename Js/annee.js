@@ -123,21 +123,128 @@ toggleButton.addEventListener("click", function () {
 });
 
 
-let modal = document.getElementById("modal");
-  let button = document.getElementById("button");
-  // let sidebar = document.getElementById("sidebar");
-  // let toggleButton = document.getElementById("toggleButton");
+// Récupérer les éléments du DOM
+const modal = document.getElementById('modal1');
+const addYearButton = document.getElementById('add-year-button');
+const closeModalButton = document.getElementById('close-modal');
+const addYearForm = document.getElementById('add-year-form');
 
-  button.addEventListener("click", function () {
-    // sidebar.style.display = "none";
-    // toggleButton.style.display = "block";
-    for (let i = 0; i < sidesArray.length; i++) {
-      sidesArray[i].style.display = "none";
-      
+// Fonction pour afficher le modal
+function openModal() {
+    modal.classList.remove('hidden');
+}
+
+// Fonction pour fermer le modal
+function closeModal() {
+    modal.classList.add('hidden');
+}
+
+// Event listener pour ouvrir le modal lorsque le bouton est cliqué
+addYearButton.addEventListener('click', openModal);
+
+// Event listener pour fermer le modal lorsque le bouton "Annuler" est cliqué
+closeModalButton.addEventListener('click', closeModal);
+
+// Event listener pour soumettre le formulaire
+addYearForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Empêcher la soumission normale du formulaire
+
+    const yearInput = document.getElementById('year-input').value;
+    const statusInput = document.getElementById('status-input').value;
+
+    if (yearInput && statusInput) {
+        // Vous pouvez ajouter ici le code pour envoyer les données au serveur ou ajouter la ligne dans le tableau
+        console.log(`Année: ${yearInput}, Statut: ${statusInput}`);
+        
+        // Fermer le modal après l'enregistrement
+        closeModal();
+    } else {
+        alert("Veuillez remplir tous les champs.");
     }
-  });
+});
 
 
-  
 
-  
+// Récupérer les éléments du DOM
+const filterInput = document.getElementById('status-filter');
+const filterButton = document.getElementById('filter-button');
+
+// Fonction pour filtrer les lignes du tableau par statut
+function filterItems() {
+    const filterText = filterInput.value.toLowerCase(); // Récupérer le texte du champ de filtre et le mettre en minuscule
+
+    // Sélectionner toutes les lignes du tableau (toutes les lignes sauf l'en-tête)
+    const rows = document.querySelectorAll('tbody tr'); 
+
+    rows.forEach(row => {
+        // Récupérer la cellule contenant le statut (2ème colonne)
+        const statutCell = row.cells[1]; 
+
+        // Vérifier si le texte du filtre correspond au statut
+        if (statutCell.textContent.toLowerCase().includes(filterText)) {
+            row.style.display = ''; // Afficher la ligne si le statut correspond
+        } else {
+            row.style.display = 'none'; // Cacher la ligne si le statut ne correspond pas
+        }
+    });
+}
+
+// Event listener pour le bouton de filtre
+filterButton.addEventListener('click', filterItems);
+
+// Optionnel : déclencher la fonction de filtre à chaque fois que l'utilisateur tape dans le champ
+filterInput.addEventListener('input', filterItems);
+
+
+
+let currentPage = 1;
+const rowsPerPage = 3; // Nombre de lignes par page
+
+// Fonction pour changer de page (Précédent ou Suivant)
+function changePage(direction) {
+    currentPage += direction;
+    if (currentPage < 1) currentPage = 1;
+    if (currentPage > 3) currentPage = 3; // Assurez-vous d'avoir assez de pages
+    showPage(currentPage);
+}
+
+// Fonction pour aller directement à une page spécifique
+function goToPage(page) {
+    currentPage = page;
+    showPage(page);
+}
+
+// Fonction pour afficher la page correspondante
+function showPage(page) {
+    const rows = document.querySelectorAll('#data-table tbody tr');
+    
+    // Masquer toutes les lignes
+    rows.forEach(row => {
+        row.style.display = 'none';
+    });
+
+    // Calculer les indices des lignes à afficher
+    const start = (page - 1) * rowsPerPage;
+    const end = page * rowsPerPage;
+
+    // Afficher les lignes pour la page courante
+    const rowsToShow = Array.from(rows).slice(start, end);
+    rowsToShow.forEach(row => {
+        row.style.display = ''; // Afficher la ligne
+    });
+
+    // Mettre à jour l'état des boutons de pagination
+    for (let i = 1; i <= 3; i++) {
+        const pageButton = document.getElementById(`page-${i}`);
+        if (i === page) {
+            pageButton.classList.add('bg-blue-600', 'text-white');
+            pageButton.classList.remove('hover:bg-gray-200');
+        } else {
+            pageButton.classList.remove('bg-blue-600', 'text-white');
+            pageButton.classList.add('hover:bg-gray-200');
+        }
+    }
+}
+
+// Initialiser la première page
+showPage(currentPage);

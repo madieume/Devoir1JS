@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Années</title>
+    <title>Liste des classes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
@@ -38,19 +38,19 @@
                 </div>
                 <div>
                     <a href="annee.html"
-                        class="block py-2 px-4 mb-4 rounded border border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
+                        class="block py-2 px-4 rounded border border-gray-300  flex items-center text-black hover:bg-gray-100 transition duration-300">
                         <i class="fas fa-calendar-alt mr-2"></i>
                         <div class="side">Liste des années</div>
                     </a>
-                   
+
                     <a href="module.html"
-                    class="block py-2 px-4 rounded border border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
-                    <i class="fas fa-book mr-2"></i>
+                        class="block py-2 px-4 rounded border border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
+                        <i class="fas fa-book mr-2"></i>
                         <div class="side">Liste des modules</div>
                     </a>
 
                     <a href="classe.html"
-                        class="block py-2 px-4 rounded border border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
+                        class="block py-2 px-4 rounded border   bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
                         <i class="fas fa-chalkboard-teacher mr-2"></i>
                         <div class="side">Liste des classes</div>
                     </a>
@@ -62,11 +62,10 @@
                     </a>
 
                     <a href="etudiant.html"
-                    class="block py-2 px-4 rounded bg-white flex items-center text-black hover:bg-gray-100 transition duration-300 mt-3">
-                    <i class="fas fa-user-graduate mr-2"></i>
-                    <div class="side">Liste des étudiants</div>
-                </a>
-                
+                        class="block py-2 px-4 rounded border bg-white border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
+                        <i class="fas fa-user-graduate mr-2"></i>
+                        <div class="side">Liste des étudiants</div>
+                    </a>
 
                     <a href="professeur.html"
                         class="block py-2 px-4 rounded border border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
@@ -108,96 +107,153 @@
         </div>
     </nav>
 
+
     <div class="p-4 sm:ml-64">
-        <!-- <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700"> -->
-        <h1 class="text-blue-400">Etudiant / Liste des etudiant</h1>
-        <h1 class="text-xl font-bold mb-6">Liste des etudiants des étudiants de l'année en cours</h1>
+        <h1 class="text-blue-400">Classe / Liste des classes de l'année en cours </h1>
+        <h1 class="text-xl font-bold mb-6">Liste des classes de l'année en cours</h1>
+        <!-- Conteneur Flex pour le bouton et le filtre -->
         <div class="flex items-center justify-between mb-4">
+
             <!-- Champ de filtre et bouton OK -->
             <div class="flex items-center space-x-2">
-              <h1 class="font-semibold">Rechercher et filtrer </h1>
-           </div>
-           <!-- Bouton Ajouter une année -->
-           <button id="add-year-button" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">
-               Ajouter un étudiant
-           </button>
-       </div>
- 
-  <div class="flex flex-col items-start space-y-2">
-    <label for="search" class="font-medium text-gray-700">Rechercher un étudiant :</label>
-    <div class="flex items-center space-x-2 w-full">
-      <input type="text" id="search" placeholder="Entrer le Nom"
-          class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
-      <button id="search-btn"
-          class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          OK
-      </button>
-    </div>
-  </div>
-  <div class="flex items-start space-x-6">
-    <!-- Filtre par classe -->
-    <div class="flex flex-col items-start space-y-2">
-      <label for="filter-class" class="font-medium text-gray-700">Filtrer par classe :</label>
-      <div class="flex items-center space-x-2">
-        <select id="filter-class"
-            class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-          <option value="" disabled selected>Choisissez une classe</option>
-          <option value="licence1">Licence 1</option>
-          <option value="licence2">Licence 2</option>
-          <option value="licence3">Licence 3</option>
-        </select>
-        <button id="filter-class-btn"
-            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            OK
-        </button>
-      </div>
-    </div>
-  
-    <!-- Filtre par filière -->
-    <div class="flex flex-col items-start space-y-2">
-      <label for="filter-field" class="font-medium text-gray-700">Filtrer par filière :</label>
-      <div class="flex items-center space-x-2">
-        <select id="filter-field"
-            class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-          <option value="" disabled selected>Choisissez une filière</option>
-          <option value="Developpement">Developpement Web et Mobile</option>
-          <option value="genie_logiciel">Genie Logiciel</option>
-          <option value="design_numerique">Design Numerique</option>
-        </select>
-        <button id="filter-field-btn"
-            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            OK
-        </button>
-      </div>
-    </div>
-  </div>
-  
-  
-  
+                <input type="text" id="semester-filter" placeholder="Filtrer"
+                    class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                <button id="filter-button"
+                    class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    OK
+                </button>
+            </div>
+            <button  id="add-student-btn"
+                class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">
+                Ajouter un etudiant
+            </button>
+        </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-12">
             <table class="min-w-full table-auto border-collapse">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-200 dark:text-gray-400 border-b">
-                  <tr>
-                    <th class="py-3 px-6 text-left border-r">Nom</th>
-                    <th class="py-3 px-6 text-left border-r">Prenom</th>
-                    <th class="py-3 px-6 text-left border-r">Classe</th>
-                    <th class="py-3 px-6 text-left border-r">Filière</th>
-                    <th class="py-3 px-6 text-center">Actions</th>
-                  </tr>
+                    <tr>
+                        <th class="py-3 px-6 text-left border-r">ID</th>
+                        <th class="py-3 px-6 text-left border-r">Nom</th>
+                        <th class="py-3 px-6 text-left border-r">Prénom</th>
+                        <th class="py-3 px-6 text-left border-r">Classe</th>
+                        <th class="py-3 px-6 text-left border-r">Filière</th>
+                        <th class="py-3 px-6 text-center">Actions</th>
+                    </tr>
                 </thead>
                 <tbody id="table-body" class="text-gray-600 text-sm font-light">
-                  <!-- Les lignes des années seront insérées ici -->
+                    <!-- Les lignes des années seront insérées ici -->
                 </tbody>
             </table>
 
+            <!-- Modal pour afficher les détails de l'année -->
+            <div id="details-modal"
+                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-1/2">
+                    <h2 class="text-xl font-bold mb-4">Détails de l'année</h2>
+                    <p id="modal-date-debut"></p>
+                    <p id="modal-date-fin"></p>
+                    <p id="modal-description"></p>
+                    <button onclick="closeModal()"
+                        class="bg-red-500 text-white px-4 py-2 rounded-md mt-4">Fermer</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-6">
+            <button id="prev-button" class="px-4 py-2 text-black hover:bg-gray-200" onclick="changePage(-1)">
+                Précédent
+            </button>
+
+            <button id="page-1" class="px-4 py-2 text-black hover:bg-gray-200" onclick="goToPage(1)">
+                1
+            </button>
+
+            <button id="page-2" class="px-4 py-2 bg-blue-600 text-white hover:bg-blue-700" onclick="goToPage(2)">
+                2
+            </button>
+
+            <button id="page-3" class="px-4 py-2 text-black hover:bg-gray-200" onclick="goToPage(3)">
+                3
+            </button>
+
+            <button id="next-button" class="px-4 py-2 text-black hover:bg-gray-200" onclick="changePage(1)">
+                Suivant
+            </button>
         </div>
 
 
-        <script src="/Js/etudiant.js"></script>
+    </div>
 
+        <div
+  id="add-student-modal"
+  class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden"
+>
+  <div class="bg-white p-6 rounded shadow-lg w-1/3">
+    <h2 class="text-lg font-bold mb-4">Ajouter un nouvel étudiant</h2>
+    <form id="add-student-form">
+      <div class="mb-4">
+        <label for="nom" class="block text-sm font-bold">Nom</label>
+        <input
+          type="text"
+          id="nom"
+          name="nom"
+          class="border rounded py-2 px-3 w-full"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="prenom" class="block text-sm font-bold">Prénom</label>
+        <input
+          type="text"
+          id="prenom"
+          name="prenom"
+          class="border rounded py-2 px-3 w-full"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="classe" class="block text-sm font-bold">Classe</label>
+        <input
+          type="text"
+          id="classe"
+          name="classe"
+          class="border rounded py-2 px-3 w-full"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="filiere" class="block text-sm font-bold">Filière</label>
+        <input
+          type="text"
+          id="filiere"
+          name="filiere"
+          class="border rounded py-2 px-3 w-full"
+          required
+        />
+      </div>
+      <div class="flex justify-end">
+        <button
+          type="button"
+          id="close-modal-btn"
+          class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700 mr-2"
+        >
+          Annuler
+        </button>
+        <button
+          type="submit"
+          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700"
+        >
+          Ajouter
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 
-
-
-    </body>
+<script src="/Js/etudiant.js"></script>
     
-    </html>
+</body>
+
+</html>

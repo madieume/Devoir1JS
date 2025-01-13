@@ -107,30 +107,64 @@
         </div>
     </nav>
 
-
-
     <div class="p-4 sm:ml-64">
         <h1 class="text-blue-400">Annee / Liste des années</h1>
         <h1 class="text-xl font-bold mb-6">Liste des années</h1>
        <!-- Conteneur Flex pour le bouton et le filtre -->
 <div class="flex items-center justify-between mb-4">
      <!-- Champ de filtre et bouton OK -->
-     <div class="flex items-center space-x-2">
-        <input type="text" id="status-filter" placeholder="Filtrer"
-            class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
-        <button id="filter-button"
-            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            OK
-        </button>
-    </div>
-    <!-- Bouton Ajouter une année -->
-    <button id="add-year-button" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">
-        Ajouter une année
+<div class="flex items-center space-x-2">
+    <input type="text" id="status-filter" placeholder="Filtrer"
+        class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+    <button id="filter-button"
+        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        OK
     </button>
+</div>
+    <!-- Bouton Ajouter une année -->
+<button id="add-year-button" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">
+    Ajouter une année
+</button>
+
+<!-- Modal -->
+
+<div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white w-1/3 p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-4">Ajouter une année</h2>
+        <form id="add-year-form">
+            <div class="mb-4">
+                <label for="year-input" class="block text-sm font-medium text-gray-700 mb-1">Année</label>
+                <input type="text" id="year-input" placeholder="Exemple : 2025"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+            </div>
+            <div class="mb-4">
+                <label for="status-input" class="block text-sm font-medium text-gray-700 mb-1">Statut</label>
+                <select id="status-input"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <option value="" disabled selected>Choisir un statut</option>
+                    <option value="ouverte">Ouverte</option>
+                    <option value="fermee">Fermée</option>
+                    <option value="prevue">Prévue</option>
+                </select>
+            </div>
+            <div class="flex justify-end space-x-2">
+                <button type="button" id="close-modal"
+                    class="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 focus:outline-none">
+                    Annuler
+                </button>
+                <button type="submit"
+                    class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">
+                    Enregistrer
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
     
 </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-12">
-            <table class="min-w-full table-auto border-collapse">
+            <table id="data-table" class="min-w-full table-auto border-collapse ">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-200 dark:text-gray-400 border-b">
                   <tr>
                     <th class="py-3 px-6 text-left border-r">Année</th>

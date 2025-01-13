@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -50,7 +50,7 @@
                     </a>
 
                     <a href="classe.html"
-                        class="block py-2 px-4 rounded border  bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
+                        class="block py-2 px-4 rounded border  bg-white bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
                         <i class="fas fa-chalkboard-teacher mr-2"></i>
                         <div class="side">Liste des classes</div>
                     </a>
@@ -68,7 +68,7 @@
                     </a>
 
                     <a href="professeur.html"
-                        class="block py-2 px-4 rounded border  bg-white border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
+                        class="block py-2 px-4 rounded border border-gray-300 bg-transparent text-black mt-3 flex items-center hover:bg-gray-100 transition duration-300">
                         <i class="fas fa-chalkboard mr-2"></i>
                         <div class="side">Liste des professeurs</div>
                     </a>
@@ -109,8 +109,8 @@
 
 
     <div class="p-4 sm:ml-64">
-        <h1 class="text-blue-400">Professeur / Liste des professeurs</h1>
-        <h1 class="text-xl font-bold mb-6">Liste des professeurs</h1>
+        <h1 class="text-blue-400">Classe / Liste des classes de l'année en cours </h1>
+        <h1 class="text-xl font-bold mb-6">Liste des classes de l'année en cours</h1>
         <!-- Conteneur Flex pour le bouton et le filtre -->
         <div class="flex items-center justify-between mb-4">
 
@@ -126,7 +126,7 @@
             <!-- Bouton Ajouter une classe -->
             <button id="add-year-button"
                 class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">
-                Ajouter un prof
+                Ajouter une classe
             </button>
         </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-12">
@@ -134,9 +134,8 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-200 dark:text-gray-400 border-b">
                     <tr>
                         <th class="py-3 px-6 text-left border-r">ID</th>
-                        <th class="py-3 px-6 text-left border-r">Nom</th>
-                        <th class="py-3 px-6 text-left border-r">Grade</th>
-                        <th class="py-3 px-6 text-left border-r">Spécialité</th>
+                        <th class="py-3 px-6 text-left border-r">Libelle</th>
+                        <th class="py-3 px-6 text-left border-r">Filière</th>
                         <th class="py-3 px-6 text-center">Actions</th>
                     </tr>
                 </thead>
@@ -189,7 +188,7 @@
 
 
 
-    <script src="/Js/professeur.js"></script>
+    <script src="/Js/classe.js"></script>
 
 
 

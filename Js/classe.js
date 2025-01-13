@@ -1,31 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
     const tableBody = document.getElementById("table-body");
-    const jsonUrl = "http://localhost:3000/professeurs"; // Remplacez par l'URL de votre JSON Server
+    const jsonUrl = "http://localhost:3000/classes"; // Remplacez par l'URL de votre JSON Server
   
     // Fonction pour récupérer les données
-    async function fetchProfesseurs() {
+    async function fetchClasses() {
       try {
         const response = await fetch(jsonUrl);
         if (!response.ok) throw new Error("Erreur lors de la récupération des données.");
-        const professeurs = await response.json();
+        const classes = await response.json();
   
         // Effacer le contenu actuel de la table
         tableBody.innerHTML = "";
   
-        // Parcourir et ajouter chaque professeur dans la table
-        professeurs.forEach((professeur) => {
+        // Parcourir et ajouter chaque classe dans la table
+        classes.forEach((classe) => {
           const row = document.createElement("tr");
   
           row.innerHTML = `
-            <td class="py-3 px-6 border-b">${professeur.id}</td>
-            <td class="py-3 px-6 border-b">${professeur.nom}</td>
-            <td class="py-3 px-6 border-b">${professeur.grade}</td>
-            <td class="py-3 px-6 border-b">${professeur.specialite}</td>
+            <td class="py-3 px-6 border-b">${classe.id}</td>
+            <td class="py-3 px-6 border-b">${classe.nom}</td>
+            <td class="py-3 px-6 border-b">${classe.idNiveau}</td>
             <td class="py-3 px-6 border-b text-center">
-              <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600" onclick="editProfessor(${professeur.id})">
+              <button class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600" onclick="viewDetails(${classe.id})">
+                Voir
+              </button>
+              <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600" onclick="editClass(${classe.id})">
                 Modifier
               </button>
-              <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600" onclick="deleteProfessor(${professeur.id})">
+              <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600" onclick="deleteClass(${classe.id})">
                 Supprimer
               </button>
             </td>
@@ -35,38 +37,37 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       } catch (error) {
         console.error("Erreur:", error);
-        tableBody.innerHTML = `<tr><td colspan="5" class="text-center text-red-500">Erreur de chargement des données.</td></tr>`;
+        tableBody.innerHTML = `<tr><td colspan="4" class="text-center text-red-500">Erreur de chargement des données.</td></tr>`;
       }
     }
   
     // Exemple de fonction pour afficher les détails (vous pouvez adapter selon vos besoins)
     window.viewDetails = function (id) {
-      alert(`Afficher les détails du professeur avec ID: ${id}`);
+      alert(`Afficher les détails de la classe avec ID: ${id}`);
     };
   
-    // Exemple de fonction pour modifier un professeur
-    window.editProfessor = function (id) {
-      alert(`Modifier le professeur avec ID: ${id}`);
+    // Exemple de fonction pour modifier une classe
+    window.editClass = function (id) {
+      alert(`Modifier la classe avec ID: ${id}`);
     };
   
-    // Exemple de fonction pour supprimer un professeur
-    window.deleteProfessor = function (id) {
-      if (confirm("Voulez-vous vraiment supprimer ce professeur ?")) {
+    // Exemple de fonction pour supprimer une classe
+    window.deleteClass = function (id) {
+      if (confirm("Voulez-vous vraiment supprimer cette classe ?")) {
         fetch(`${jsonUrl}/${id}`, { method: "DELETE" })
           .then((response) => {
             if (!response.ok) throw new Error("Erreur lors de la suppression.");
-            alert("Professeur supprimé avec succès !");
-            fetchProfesseurs(); // Recharger les données après suppression
+            alert("Classe supprimée avec succès !");
+            fetchClasses(); // Recharger les données après suppression
           })
           .catch((error) => console.error("Erreur de suppression:", error));
       }
     };
   
     // Charger les données au démarrage
-    fetchProfesseurs();
+    fetchClasses();
   });
   
-
 
 
   // Code pour le menu de la barre latérale et les modals
